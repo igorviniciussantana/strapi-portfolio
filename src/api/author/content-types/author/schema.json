@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "technologies",
+  "collectionName": "authors",
   "info": {
-    "singularName": "technology",
-    "pluralName": "technologies",
-    "displayName": "technology",
-    "description": ""
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author"
   },
   "options": {
     "draftAndPublish": true
@@ -16,23 +15,30 @@
       "type": "string",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "avatar": {
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "github_url": {
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "name"
+      "targetField": "username"
     },
     "projects": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::project.project",
-      "mappedBy": "technologies"
+      "inversedBy": "authors"
     }
   }
 }
