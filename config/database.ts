@@ -10,7 +10,7 @@ export default ({ env }) => ({
       ssl: env.bool('DATABASE_SSL'),
     },
     pool: {
-      max: 5
+      max: 3
     }
   },
 });
